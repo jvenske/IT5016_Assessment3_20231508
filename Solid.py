@@ -7,6 +7,9 @@ class Shape:
     def draw(self):
         pass
 
+# Here we see the open/closed principal, all the existing classes are closed to not be changed, but if we wanted to add more shapes 
+# it is open to adding more child classes to do so.
+
 class octogon(Shape):
     def __init__(self):
         super.__init__
@@ -16,6 +19,10 @@ class octogon(Shape):
             myTurtle.forward(100)
             myTurtle.right(45)   
 
+# Here is a great example of single responsibility principal, the octogon class is only responsible for drawing an octogon so when
+# that function is called we know only an octogon will be drawn, if we want more shapes we call for those. This gives us options 
+# and flexibility
+
 class triangle(Shape):
     def __init__(self):
         super.__init__
@@ -24,6 +31,9 @@ class triangle(Shape):
         for i in range(3):
             myTurtle.forward(100)
             myTurtle.left(120)
+
+# We can use the liskov subsitution principal to switch out the shapes drawn, above we have a triangle but if we later decided 
+# we'd prefer a star we can easily switch it.
 
 class hexagon(Shape):
     def __init__(self):
